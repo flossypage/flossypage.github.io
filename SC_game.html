@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game page</title>
+	<link rel="icon" href="file:///Users/shidhincr/Downloads/Smile%20City/pixil-frame-0.png" type="pixil-frame-0.png">
+	<style type="text/css">
+		body {
+			background: yellow;
+		}
+		#chapter1-trailer {
+			color: white;
+			background: black;
+			position: absolute;
+			top: 150px;
+			left: 150px;
+			width: 200px;
+			height: 40px;
+			font-size: 30px;
+			cursor: pointer;
+		}
+		#playchapter1 {
+			color: red;
+			background: black;
+			position: absolute;
+			top: 225px;
+			left: 140px;
+			width: 225px;
+			height: 40px;
+			font-size: 30px;
+			cursor: pointer;
+		}
+		#chapter1img {
+			position: absolute;
+			width: 575px;
+			height: 300px;
+			top: 75px;
+			right: 200px;
+		}
+		#thegame{
+			position: absolute;
+			text-align: center;
+			top: 2px;
+			left: 650px;
+		}
+		#chapter1txt {
+			position: absolute;
+			top: 50px;
+			left: 200px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="thegame">the Game</h1>
+	<h2 id="chapter1txt">Chapter 1:</h2>
+	<button id="chapter1-trailer" onclick="Chapter1Trailer()">Watch trailer</button>
+	<button id="playchapter1" onclick="PlayChapter1()">Play Chapter 1</button>
+	<img id="chapter1img" src="file:///Users/shidhincr/Downloads/Smile%20City/Smile%20City%201.png">
+
+	<script type="text/javascript">
+	function Chapter1Trailer() {
+		window.open('http://youtube.com/@flossypage', '_blank');
+	}	
+	function PlayChapter1() {
+		window.open('http://steampowered.com')
+	}
+	</script>
+</body>
+</html>

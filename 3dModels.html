@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>3d models</title>
+	<link rel="icon" href="file:///Users/shidhincr/Downloads/Smile%20City/pixil-frame-0.png" type="pixil-frame-0.png">
+	<style type="text/css">
+		#cuddleclaws-image {
+            width: 100%;
+            max-width: 200px; /* Adjust the max-width as needed */
+            top: 200px;
+            position: absolute;
+            left: 50px;
+        }
+
+        #cuddleclaws-text {
+            font-size: 24px;
+            margin-top: 10px;
+            position: absolute;
+            left: 70px;
+            top: 400px;
+            border-radius: 10px;
+            cursor: pointer;
+	</style>
+</head>
+<body>
+	 <div id="search-container">
+        <input type="text" id="search-box" placeholder="Search...">
+        <button id="search-button" onclick="performSearch()">Search</button>
+    </div>
+	<img id="cuddleclaws-image" src="file:///Users/shidhincr/Downloads/Smile%20City/CuddleclawsStore.png" alt="CuddleClaws Image">
+
+    <!-- Text below the image -->
+    <button id="cuddleclaws-text" onclick="CuddleClawsStorePage()">CuddleClaws</button>
+    <!-- Container for search results -->
+    <div id="search-results"></div>
+
+    <script type="text/javascript">
+    	function CuddleClawsStorePage() {
+            window.open('CuddleClawsDownloadpage.html', '_blank');
+        }
+        function performSearch() {
+            // Retrieve the search query from the search box
+            var searchQuery = document.getElementById('search-box').value;
+        }
+    </script>
+
+</body>
+</html>
