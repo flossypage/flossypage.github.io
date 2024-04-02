@@ -1,0 +1,97 @@
+body,html {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 200px;
+    width: 1400px;
+    background-color: rgb(255, 221, 0);
+}
+.header h1 {
+  margin: 0;
+  text-align: center;
+  padding: 2.5rem;
+  font-size: 100px;
+}
+.trailer {
+  width: 90vw;
+}
+#credits-button {
+      position: absolute;
+      top: 50px;
+      left: 10px;
+      color: white;
+      background-color: black;
+      font-size: 30px;
+      width: 200px;
+      cursor: pointer;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      text-align: center;
+  }
+#store-button {
+      position: absolute;
+      top: 125px;
+      left: 10px;
+      color: white;
+      background-color: black;
+      font-size: 30px;
+      width: 200px;
+      cursor: pointer;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      text-align: center;
+}
+#log_in {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: limegreen;
+  background-color: black;
+}
+#info-button {
+      position: absolute;
+      top: 200px;
+      left: 10px;
+      color: white;
+      background-color: black;
+      font-size: 30px;
+      width: 200px;
+      cursor: pointer;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      text-align: center;
+}
+#game-button {
+      position: absolute;
+      top: 275px;
+      left: 10px;
+      color: white;
+      background-color: black;
+      font-size: 30px;
+      width: 200px;
+      cursor: pointer;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      text-align: center;
+}
+.bluebox {
+      background-color: royalblue;
+      position: absolute;
+      top: 200px;
+      width: 250px;
+      height: 700px;
+}

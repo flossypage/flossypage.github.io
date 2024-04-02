@@ -3,133 +3,20 @@
 <head>
     <title>Official Smile City Website</title>
     <link rel="icon" href="pixil-frame-0.png" type="pixil-frame-0.png">
-    <style type="text/css">
-        body,html {
-        background-color: white;
-        margin: 0;
-        padding: 0;
-      }
-      .header {
-        top: 0;
-        right: 0;
-        left: 0;
-        height: 200px;
-        width: 1400px;
-        background-color: rgb(255, 221, 0);
-      }
-      .header h1 {
-        margin: 0;
-        text-align: center;
-        padding: 2.5rem;
-        font-size: 100px;
-      }
-      .trailer {
-        width: 90vw;
-      }
-      #credits-button {
-            position: absolute;
-            top: 50px;
-            left: 10px;
-            color: white;
-            background-color: black;
-            font-size: 30px;
-            width: 200px;
-            cursor: pointer;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            text-align: center;
-        }
-      #store-button {
-            position: absolute;
-            top: 125px;
-            left: 10px;
-            color: white;
-            background-color: black;
-            font-size: 30px;
-            width: 200px;
-            cursor: pointer;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            text-align: center;
-      }
-      #log_in {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        color: limegreen;
-        background-color: black;
-      }
-      #info-button {
-            position: absolute;
-            top: 200px;
-            left: 10px;
-            color: white;
-            background-color: black;
-            font-size: 30px;
-            width: 200px;
-            cursor: pointer;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            text-align: center;
-      }
-      #game-button {
-            position: absolute;
-            top: 275px;
-            left: 10px;
-            color: white;
-            background-color: black;
-            font-size: 30px;
-            width: 200px;
-            cursor: pointer;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            text-align: center;
-      }
-      .bluebox {
-            background-color: royalblue;
-            position: absolute;
-            top: 200px;
-            width: 250px;
-            height: 700px;
-
-      }
-
-    </style>
-    
+    <link href="index.css" rel="css" type="css">
+    <script src="assets/index.js"></script>
 </head>
 <body>
     <div class="header"><h1>Smile City</h1></div>
-    <button id="log_in">Log In</button>
-    <!-- Why is this is here? - Deva 
-    <video src=""></video> 
-    -->
+    
+    <!-- Commenting until implemented --> 
+    <!-- <button id="log_in">Log In</button> -->
 
     <div class="bluebox">
-    <a id="credits-button" style="text-decoration:none" href="SC_credits.html" >Credits</a>
-    <a id="store-button" style="text-decoration:none" href="SC_store.html">Store</a>
-    <a id="info-button" style="text-decoration:none" href="SC_info.html">Info</a>
-    <a id="game-button" style="text-decoration:none" href="SC_game.html">Game</a>
+       <a id="credits-button" style="text-decoration:none" href="SC_credits.html" >Credits</a>
+       <a id="store-button" style="text-decoration:none" href="SC_store.html">Store</a>
+       <a id="info-button" style="text-decoration:none" href="SC_info.html">Info</a>
+       <a id="game-button" style="text-decoration:none" href="SC_game.html">Game</a>
     </div>
-
-    <!-- does nothing -->
-    <script>
-        function openCreditsPage() {
-            window.open('SC_credits.html');
-        }
-        function openStorePage() {
-            window.open('SC_store.html');
-        }
-    </script>
-
-
 </body>
 </html>
