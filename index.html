@@ -2,99 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Laggy Legends</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
+    <style type="text/css">
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #003366; /* Dark blue */
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .lobby {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .lobby-buttons a {
-            text-decoration: none;
-            background-color: #007BFF;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            margin: 10px;
-            display: inline-block;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .lobby-buttons a:hover {
-            background-color: #0056b3;
-            transform: scale(1.1); /* Transition size effect */
-        }
-        .new-items {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-        .item {
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            width: 200px;
-            height: 200px;
-        }
-        .item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        .item:hover img {
-            transform: scale(1.1); /* Hover transition effect */
-        }
-        .item p {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            text-align: center;
-            color: #fff;
-            font-weight: bold;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 5px 0;
-            margin: 0;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.lobby {
+    margin-bottom: 30px;
+}
+
+.lobby-buttons {
+    margin-top: 20px;
+}
+
+.lobby-buttons a {
+    text-decoration: none;
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    margin: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.lobby-buttons a:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.new-items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.item {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.item:hover img {
+    transform: scale(1.1);
+}
+
+.item p {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 0;
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background-color: darkblue;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
     </style>
 </head>
 <body>
@@ -103,7 +136,7 @@
         <nav>
             <ul>
                 <li><a href="#main-lobby">Home</a></li>
-                <li><a href="full-shop.html">Full Shop</a></li> <!-- Link to Full Shop page -->
+                <li><a href="full-shop.html">Full Shop</a></li>
             </ul>
         </nav>
     </header>
@@ -112,9 +145,8 @@
         <h2>Welcome to The Laggy Legends</h2>
         <p>Explore the world of your favorite YouTubers, their exclusive merchandise, and more!</p>
         <div class="lobby-buttons">
-            <a href="flossypage-info.html">FlossyPage Info</a> <!-- Link to FlossyPage Info -->
-            <a href="outlawbee-info.html">Outlawbee Info</a> <!-- Link to Outlawbee Info -->
-            <a href="full-shop.html">Visit Full Shop</a> <!-- Link to Full Shop -->
+            <a href="member-info.html">Member Info</a> <!-- New Member Info button -->
+            <a href="full-shop.html">Visit Full Shop</a>
         </div>
         
         <h3>New Items</h3>
