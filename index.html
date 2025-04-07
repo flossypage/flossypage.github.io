@@ -54,10 +54,6 @@ nav ul li a {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.lobby-buttons a:hover {
-    background-color: #0056b3;
-    transform: scale(1.1);
-}
 
 .new-items {
     display: flex;
@@ -128,6 +124,14 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.home-button {
+    color: white;
+}
+
+.home-button:hover {
+    color: red;
+}
     </style>
 </head>
 <body>
@@ -135,8 +139,8 @@ footer {
         <h1>Mythical Noobs</h1>
         <nav>
             <ul>
-                <li><a href="#main-lobby">Home</a></li>
-                <li><a href="full-shop.html">Full Shop</a></li>
+                <li><a href="#main-lobby" class="home-button">Home</a></li>
+                <li><a href="full-shop.html" class="shop-button">Full Shop</a></li>
             </ul>
         </nav>
     </header>
@@ -144,11 +148,6 @@ footer {
     <section id="main-lobby" class="lobby">
         <h2>Welcome to The Mythical Noobs Website</h2>
         <p>Explore the world of the Mythical Noobs, their exclusive merchandise, and more!</p>
-        <div class="lobby-buttons">
-            <a href="member-info.html">Members Info</a> <!-- New Member Info button -->
-            <a href="full-shop.html">Visit Full Shop</a>
-        </div>
-        
         <h3>New Items</h3>
         <div class="new-items">
             <div class="item">
