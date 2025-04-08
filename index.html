@@ -3,127 +3,663 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title color="red">Mythical Noobs</title>
-    <link rel="stylesheet" href="styles.css">
-    <style type="text/css">
+    <title>Mythical Noobs - Gaming Merchandise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #c41e3a;       /* Red */
+            --primary-dark: #8b0000;  /* Darker red */
+            --secondary: #c0c0c0;     /* Silver */
+            --accent: #d3d3d3;        /* Light silver */
+            --dark: #262626;
+            --light: #f5f5f5;
+            --text-dark: #2b2b2b;
+            --text-light: #ffffff;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 4rem;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    text-align: center;
-}
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
 
-header {
-    background-color: black;
-    color: white;
-    padding: 20px;
-}
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s ease;
+        }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
 
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: var(--text-light);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
 
-.lobby {
-    margin-bottom: 30px;
-    position: fixed;
-}
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
 
-.new-items {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-}
+        .accent-btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
 
-.item {
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    width: 200px;
-    height: 200px;
-}
+        .accent-btn:hover {
+            background-color: #a9a9a9;
+        }
 
-.item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: var(--spacing-md) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
 
-.item:hover img {
-    transform: scale(1.1);
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.item p {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 5px 0;
-    margin: 0;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
 
-.home-button {
-    color: white;
-}
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
 
-.home-button:hover {
-    color: red;
-}
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
 
-.shop-button {
-    color: white;
-}
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+            list-style: none;
+        }
 
-.shop-button:hover {
-    color: red;
-}
+        .nav-links a {
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--text-light);
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, var(--primary-dark) 150%);
+            opacity: 0.7;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        .hero .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+        }
+
+        /* Featured Items */
+        .featured {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-header h3 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .section-header h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: var(--spacing-md);
+        }
+
+        .product-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary);
+        }
+
+        .product-info p {
+            margin-bottom: var(--spacing-md);
+            color: #666;
+        }
+
+        .price {
+            font-weight: bold;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: var(--spacing-md);
+        }
+
+        /* About Section */
+        .about {
+            padding: var(--spacing-xl) 0;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        
+        .about::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 65%, rgba(192, 192, 192, 0.2) 100%);
+            pointer-events: none;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .about-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+        }
+
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            background-color: var(--light);
+        }
+
+        .cta h3 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary);
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--text-light);
+            padding: var(--spacing-lg) 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .footer-column h4 {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: var(--spacing-lg);
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image {
+                grid-row: 1;
+            }
+
+            .hero .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: var(--spacing-sm);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h3 {
+                font-size: 1.5rem;
+            }
+
+            .product-card img {
+                height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Mythical Noobs</h1>
-        <nav>
-            <ul>
-                <li><a href="#main-lobby" class="home-button">Home</a></li>
-                <li><a href="full-shop.html" class="shop-button">Full Shop</a></li>
-            </ul>
-        </nav>
+        <div class="container navbar">
+            <div class="logo">
+                <h1>Mythical Noobs</h1>
+                <div style="height: 2px; width: 30px; background-color: var(--secondary); margin-left: 5px;"></div>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#featured">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
-    <section id="main-lobby" class="lobby">
-        <h2>Welcome to The Mythical Noobs Website</h2>
-        <p>Explore the world of the Mythical Noobs, their exclusive merchandise, and more!</p>
-        <h3>New Items</h3>
-        <div class="new-items">
-            <div class="item">
-                <img src="new-merch1.jpg" alt="New Item 1">
-                <p>Exclusive FlossyPage Fanfit</p>
-            </div>
-            <div class="item">
-                <img src="new-merch2.jpg" alt="New Item 2">
-                <p>Limited Edition BeeCap</p>
-            </div>
-            <div class="item">
-                <img src="new-merch3.jpg" alt="New Item 3">
-                <p>Signature T-Shirt</p>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h2>Welcome to The Mythical Noobs</h2>
+            <div style="width: 100px; height: 3px; background-color: var(--secondary); margin: 0 auto var(--spacing-md);"></div>
+            <p>Explore our exclusive gaming merchandise, designed for true gamers and fans. Limited edition items available now!</p>
+            <div class="btn-group">
+                <a href="#featured" class="btn" style="border: 2px solid var(--text-light);">Shop Now</a>
+                <a href="#about" class="btn accent-btn" style="border: 2px solid var(--dark);">Learn More</a>
             </div>
         </div>
     </section>
+
+    <!-- Featured Items -->
+    <section class="featured" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <h3>Featured Items</h3>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="/api/placeholder/400/320" alt="FlossyPage Fanfit" />
+                    <div class="product-info">
+                        <h4>Exclusive FlossyPage Fanfit</h4>
+                        <p>Show your support with our limited edition fan merchandise.</p>
+                        <div class="product-actions">
+                            <span class="price">$39.99</span>
+                            <a href="#" class="btn">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/api/placeholder/400/320" alt="Limited Edition BeeCap" />
+                    <div class="product-info">
+                        <h4>Limited Edition BeeCap</h4>
+                        <p>Premium quality cap with embroidered bee logo. Only 100 available!</p>
+                        <div class="product-actions">
+                            <span class="price">$29.99</span>
+                            <a href="#" class="btn">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/api/placeholder/400/320" alt="Signature T-Shirt" />
+                    <div class="product-info">
+                        <h4>Signature T-Shirt</h4>
+                        <p>100% cotton signature team t-shirt with custom graphics.</p>
+                        <div class="product-actions">
+                            <span class="price">$24.99</span>
+                            <a href="#" class="btn">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                            <div style="text-align: center; margin-top: var(--spacing-lg);">
+                <a href="full-shop.html" class="btn" style="padding: 0.75rem 2rem; font-size: 1.1rem;">View Full Shop</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Who Are The Mythical Noobs?</h3>
+                    <p>We're a passionate gaming community that started in 2020. What began as friendly matches evolved into a team of dedicated gamers who love sharing our experiences with fans worldwide.</p>
+                    <p>Our merchandise isn't just about looking good—it's about belonging to something special. Each design is crafted with care and represents our journey.</p>
+                    <a href="#" class="btn">Our Story</a>
+                </div>
+                <div class="about-image">
+                    <img src="/api/placeholder/400/320" alt="The Mythical Noobs Team" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h3>What Our Fans Say</h3>
+            </div>
+            <div class="products-grid">
+                <div class="testimonial-card">
+                    <p>"The quality of my Mythical Noobs hoodie is amazing! I wear it all the time during streams and get so many compliments."</p>
+                    <span class="testimonial-author">- Alex S.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Fast shipping and the BeeCap looks even better in person. Love supporting this team!"</p>
+                    <span class="testimonial-author">- Taylor M.</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I've bought merch from many gaming teams, but Mythical Noobs has the best quality by far. Worth every penny!"</p>
+                    <span class="testimonial-author">- Jordan K.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h3>Join The Mythical Community</h3>
+            <p>Subscribe to our newsletter for exclusive content, early access to new merchandise drops, and special discounts.</p>
+            <form style="max-width: 500px; margin: 0 auto;">
+                <div style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                    <input type="email" placeholder="Your email address" style="flex: 1; padding: 0.75rem; border-radius: var(--border-radius); border: 1px solid #ddd;">
+                    <button type="submit" class="btn">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#">New Arrivals</a></li>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Limited Edition</a></li>
+                        <li><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Info</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect With Us</h4>
+                    <p>Follow us on social media for updates, behind-the-scenes content, and more!</p>
+                    <div class="social-links">
+                        <a href="#"><span>FB</span></a>
+                        <a href="#"><span>TW</span></a>
+                        <a href="#"><span>IG</span></a>
+                        <a href="#"><span>YT</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Mythical Noobs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
