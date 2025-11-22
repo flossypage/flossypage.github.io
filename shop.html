@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="checkShop()">
+
+<header>
+    <div class="logo">MythicalNoobs</div>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="profile-container">
+        <div class="profile-circle" onclick="toggleProfileMenu()">
+            <img src="https://i.imgur.com/2yaf2wb.png">
+        </div>
+        <div id="profileMenu" class="profile-menu hidden">
+            <div id="profileMenuContent"></div>
+        </div>
+    </div>
+</header>
+
+<section class="section">
+    <h2>Shop Items</h2>
+
+    <div class="grid">
+        <div class="product">
+            <img src="https://i.imgur.com/9yGkFjP.jpeg">
+            <h3>Hoodie</h3>
+            <p>$35</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="https://i.imgur.com/b8nD5yQ.jpeg">
+            <h3>Mouse</h3>
+            <p>$25</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
