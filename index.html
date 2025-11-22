@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mythical Noobs | Home</title>
+    <title>Dashboard | Mythical Noobs</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
     <div class="logo">MythicalNoobs</div>
-    <nav>
+
+    <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="shop.html">Shop</a>
-        <a href="profile.html">Profile</a>
-        <a href="login.html" id="loginBtn">Login</a>
-        <button id="logoutBtn" class="hidden" onclick="logoutUser()">Logout</button>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
     </nav>
+
+    <div class="profile-container">
+        <div class="profile-circle" onclick="toggleProfileMenu()">
+            <img src="https://i.imgur.com/2yaf2wb.png">
+        </div>
+        <div id="profileMenu" class="profile-menu hidden">
+            <div id="profileMenuContent"></div>
+        </div>
+    </div>
 </header>
 
-<section class="hero">
-    <h1 class="fade">Level Up Your Gaming Style</h1>
-    <p class="fade">Premium merch inspired by legends.</p>
-    <a href="shop.html" class="btn fade">Shop Now</a>
-</section>
+<div class="hero">
+    <h1>Welcome to Mythical Noobs</h1>
+    <p>Your home for epic merch, gaming gear, and more.</p>
+</div>
 
-<section class="faq-section fade">
-    <h2>FAQ</h2>
-    <p>• Where do you ship?</p>
-    <p>• How fast is delivery?</p>
-    <p>• How to contact support?</p>
+<section class="section">
+    <h2>Featured Items</h2>
+
+    <div class="grid">
+        <div class="card">🔥 Hoodie Drop</div>
+        <div class="card">⚡ Gaming Mouse</div>
+        <div class="card">🎧 Headset Pros</div>
+    </div>
 </section>
 
 <script src="script.js"></script>
