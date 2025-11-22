@@ -45,3 +45,30 @@ function fadeInOnScroll() {
 }
 
 window.addEventListener("scroll", fadeInOnScroll);
+
+// SIDEBAR TOGGLE
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+
+menuBtn.addEventListener("click", () => {
+    if (sidebar.style.left === "0px") {
+        sidebar.style.left = "-260px";
+    } else {
+        sidebar.style.left = "0px";
+    }
+});
+
+// PROFILE DROPDOWN
+const profileBtn = document.getElementById("profileBtn");
+const profileDropdown = document.getElementById("profileDropdown");
+
+profileBtn.addEventListener("click", () => {
+    profileDropdown.classList.toggle("show");
+});
+
+// close dropdown if clicking outside
+document.addEventListener("click", (e) => {
+    if (!profileBtn.contains(e.target) && !profileDropdown.contains(e.target)) {
+        profileDropdown.classList.remove("show");
+    }
+});
