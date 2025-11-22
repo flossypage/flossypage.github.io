@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythical Noobs – Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="nav">
+        <div class="logo">Mythical Noobs</div>
+
+        <ul class="nav-links">
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#drops">New Drops</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+        <div class="profile-menu" onclick="toggleMenu()">
+            <img src="profile.png">
+        </div>
+
+        <div class="dropdown" id="dropdown">
+            <a href="#">My Account</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <h1>Welcome Back, Legend.</h1>
+        <p>New merch just dropped. Go cook.</p>
+        <a href="#shop" class="btn">Shop Now</a>
+    </section>
+
+    <section id="shop" class="shop-section">
+        <h2>🔥 Featured Products</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="item1.png" alt="">
+                <h3>BeeCap Pro</h3>
+                <p>$29.99</p>
+            </div>
+
+            <div class="product-card">
+                <img src="item2.png" alt="">
+                <h3>Flossy Hoodie</h3>
+                <p>$49.99</p>
+            </div>
+
+            <div class="product-card">
+                <img src="item3.png" alt="">
+                <h3>NoobBlade Keychain</h3>
+                <p>$14.99</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
