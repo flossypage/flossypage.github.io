@@ -1,61 +1,65 @@
-console.log("Mythical Noobs running...");
-
-// TEMP LOGIN
-const TEMP_USER = "test";
-const TEMP_PASS = "1234";
-
-// SIGNUP SYSTEM
-const signupForm = document.getElementById("signupForm");
-if (signupForm) {
-    signupForm.addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        let u = document.getElementById("newUser").value;
-        let p = document.getElementById("newPass").value;
-
-        // save to browser
-        localStorage.setItem("user", u);
-        localStorage.setItem("pass", p);
-
-        alert("Account created! Now login.");
-        window.location.href = "login.html";
-    });
+// Toggle profile menu dropdown
+function toggleProfileMenu() {
+    document.getElementById("profileMenu").classList.toggle("hidden");
 }
 
-// LOGIN SYSTEM
-const loginForm = document.getElementById("loginForm");
-if (loginForm) {
-    loginForm.addEventListener("submit", function(e) {
-        e.preventDefault();
+// AUTH SYSTEM
+document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById("profileMenuContent");
+    if (!menu) return;
 
-        let u = document.getElementById("loginUser").value;
-        let p = document.getElementById("loginPass").value;
+    let logged = localStorage.getItem("loggedIn") === "true";
 
-        let savedUser = localStorage.getItem("user");
-        let savedPass = localStorage.getItem("pass");
+    if (!logged) {
+        menu.innerHTML = `
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+        `;
+    } else {
+        menu.innerHTML = `
+            <a href="profile.html">Profile</a>
+            <div onclick="logoutUser()">Logout</div>
+        `;
+    }
+});
 
-        // TEMP LOGIN
-        if (u === TEMP_USER && p === TEMP_PASS) {
-            window.location.href = "dashboard.html";
-            return;
-        }
+// Login function
+function loginUser() {
+    let email = document.getElementById("loginEmail").value;
+    let pass = document.getElementById("loginPassword").value;
 
-        // NORMAL LOGIN
-        if (u === savedUser && p === savedPass) {
-            window.location.href = "dashboard.html";
-        } else {
-            alert("bro that login ain't valid 💀");
-        }
-    });
-}
+    let stored = JSON.parse(localStorage.getItem("user"));
 
-// DROPDOWN
-function toggleMenu() {
-    let d = document.getElementById("dropdown");
-    d.style.display = d.style.display === "flex" ? "none" : "flex";
-}
+    if (!stored || stored.email !== email || stored.password !== pass) {
+        alert("Invalid email or password.");
+        return;
+    }
 
-// LOGOUT
-function logout() {
+    localStorage.setItem("loggedIn", "true");
     window.location.href = "index.html";
+}
+
+// Signup function
+function signupUser() {
+    let email = document.getElementById("signupEmail").value;
+    let pass = document.getElementById("signupPassword").value;
+
+    localStorage.setItem("user", JSON.stringify({ email, password: pass }));
+    localStorage.setItem("loggedIn", "true");
+
+    window.location.href = "index.html";
+}
+
+// Logout
+function logoutUser() {
+    localStorage.setItem("loggedIn", "false");
+    window.location.reload();
+}
+
+// Restrict Shop Page
+function checkShop() {
+    if (localStorage.getItem("loggedIn") !== "true") {
+        alert("Log in to view products.");
+        window.location.href = "login.html";
+    }
 }
