@@ -1,58 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mythical Noobs • Home</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythical Noobs | Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- NAV -->
-    <nav class="nav">
-        <h1 class="logo">Mythical <span>Noobs</span></h1>
-        <div class="nav-links">
-            <a href="login.html">Login</a>
-            <a href="signup.html" class="btn">Sign Up</a>
-        </div>
+
+<header>
+    <div class="logo">MythicalNoobs</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="profile.html">Profile</a>
+        <a href="login.html" id="loginBtn">Login</a>
+        <button id="logoutBtn" class="hidden" onclick="logoutUser()">Logout</button>
     </nav>
+</header>
 
-    <!-- HERO SECTION -->
-    <section class="hero fade-up">
-        <h2>Welcome to Mythical Noobs</h2>
-        <p>Your one-stop shop for clean gaming merch & accessories.</p>
-        <a href="shop.html" class="hero-btn">Visit Shop</a>
-    </section>
+<section class="hero">
+    <h1 class="fade">Level Up Your Gaming Style</h1>
+    <p class="fade">Premium merch inspired by legends.</p>
+    <a href="shop.html" class="btn fade">Shop Now</a>
+</section>
 
-    <!-- FEATURE CARDS -->
-    <section class="features fade-up">
-        <h2>Why Choose Us?</h2>
-        <div class="feature-grid">
-            <div class="feature-card hover-boost">
-                <h3>High Quality</h3>
-                <p>Crisp designs & premium materials.</p>
-            </div>
-            <div class="feature-card hover-boost">
-                <h3>Fast Shipping</h3>
-                <p>Your items delivered quickly.</p>
-            </div>
-            <div class="feature-card hover-boost">
-                <h3>Secure Payments</h3>
-                <p>Safe & encrypted checkout.</p>
-            </div>
-        </div>
-    </section>
+<section class="faq-section fade">
+    <h2>FAQ</h2>
+    <p>• Where do you ship?</p>
+    <p>• How fast is delivery?</p>
+    <p>• How to contact support?</p>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="footer fade-up">
-        <div class="footer-links">
-            <a href="#">FAQ</a>
-            <a href="#">YouTube</a>
-            <a href="#">Instagram</a>
-            <a href="#">Discord</a>
-        </div>
-        <p>© 2025 Mythical Noobs. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
