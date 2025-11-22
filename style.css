@@ -181,6 +181,48 @@ body {
     font-size: 17px;
     color: #ccc;
 }
+/* DASHBOARD MENU ICON */
+.menu-icon {
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: 0.3s;
+}
+
+.menu-icon:hover {
+    color: #ff1a1a;
+    transform: scale(1.15);
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;    /* hidden by default */
+    width: 240px;
+    height: 100%;
+    background: #0d0d0d;
+    border-right: 2px solid #8b0000;
+    padding-top: 80px;
+    transition: 0.35s ease;
+    z-index: 20;
+}
+
+.sidebar a {
+    display: block;
+    padding: 18px 25px;
+    color: #ddd;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.25s ease;
+}
+
+.sidebar a:hover {
+    background: #8b0000;
+    color: white;
+}
+
 
 /* ANIMATIONS */
 @keyframes fadeUp {
