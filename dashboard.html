@@ -3,59 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mythical Noobs – Home</title>
+    <title>Dashboard • Mythical Noobs</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="nav">
-        <div class="logo">Mythical Noobs</div>
+    <!-- NAVBAR -->
+    <nav class="nav">
+        <h1 class="logo">Mythical <span>Noobs</span></h1>
+        <button id="logoutBtn">Logout</button>
+    </nav>
 
-        <ul class="nav-links">
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#drops">New Drops</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
+    <!-- MAIN DASHBOARD SECTION -->
+    <section class="dash-hero fade-up">
+        <h2>Welcome, <span id="usernameDisplay">User</span></h2>
+        <p>Your journey begins here.</p>
 
-        <div class="profile-menu" onclick="toggleMenu()">
-            <img src="profile.png">
+        <div class="stats-container fade-up">
+            <div class="stat-card">
+                <h3>My Orders</h3>
+                <p>No orders yet</p>
+            </div>
+            <div class="stat-card">
+                <h3>Wishlist</h3>
+                <p>0 items</p>
+            </div>
+            <div class="stat-card">
+                <h3>Cart</h3>
+                <p>0 items</p>
+            </div>
         </div>
-
-        <div class="dropdown" id="dropdown">
-            <a href="#">My Account</a>
-            <a href="#" onclick="logout()">Logout</a>
-        </div>
-    </header>
-
-    <section class="hero-section">
-        <h1>Welcome Back, Legend.</h1>
-        <p>New merch just dropped. Go cook.</p>
-        <a href="#shop" class="btn">Shop Now</a>
     </section>
 
-    <section id="shop" class="shop-section">
-        <h2>🔥 Featured Products</h2>
-
-        <div class="product-grid">
-
-            <div class="product-card">
-                <img src="item1.png" alt="">
-                <h3>BeeCap Pro</h3>
-                <p>$29.99</p>
+    <!-- FEATURE CARDS -->
+    <section class="features fade-up">
+        <h2>Quick Actions</h2>
+        <div class="feature-grid">
+            <div class="feature-card hover-boost">
+                <h3>Inventory</h3>
+                <p>View your items</p>
             </div>
-
-            <div class="product-card">
-                <img src="item2.png" alt="">
-                <h3>Flossy Hoodie</h3>
-                <p>$49.99</p>
+            <div class="feature-card hover-boost">
+                <h3>Shop</h3>
+                <p>Buy merch & collectibles</p>
             </div>
-
-            <div class="product-card">
-                <img src="item3.png" alt="">
-                <h3>NoobBlade Keychain</h3>
-                <p>$14.99</p>
+            <div class="feature-card hover-boost">
+                <h3>Profile</h3>
+                <p>Edit account info</p>
             </div>
+        </div>
+    </section>
 
+    <!-- FAQ + SOCIALS -->
+    <section class="info-section fade-up">
+        <h2>FAQ</h2>
+        <div class="faq-container">
+            <details>
+                <summary>What is Mythical Noobs?</summary>
+                <p>A gaming-themed brand with content, merch, and community vibes.</p>
+            </details>
+            <details>
+                <summary>How do I buy merch?</summary>
+                <p>You can visit the Shop section soon when it launches.</p>
+            </details>
+            
+        </div>
+
+        <h2>Socials</h2>
+        <div class="socials">
+            <a href="#">YouTube</a>
+            <a href="#">Instagram</a>
+            <a href="#">Discord</a>
+            <a href="#">Twitter</a>
         </div>
     </section>
 
