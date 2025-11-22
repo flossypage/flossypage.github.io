@@ -1,44 +1,61 @@
 console.log("Mythical Noobs running...");
 
-// signup
+// TEMP LOGIN
+const TEMP_USER = "test";
+const TEMP_PASS = "1234";
+
+// SIGNUP SYSTEM
 const signupForm = document.getElementById("signupForm");
 if (signupForm) {
     signupForm.addEventListener("submit", function(e) {
         e.preventDefault();
+
         let u = document.getElementById("newUser").value;
         let p = document.getElementById("newPass").value;
 
+        // save to browser
         localStorage.setItem("user", u);
         localStorage.setItem("pass", p);
 
-        alert("Account created!");
+        alert("Account created! Now login.");
         window.location.href = "login.html";
     });
 }
 
-// login
+// LOGIN SYSTEM
 const loginForm = document.getElementById("loginForm");
 if (loginForm) {
     loginForm.addEventListener("submit", function(e) {
         e.preventDefault();
+
         let u = document.getElementById("loginUser").value;
         let p = document.getElementById("loginPass").value;
 
-        if (u === localStorage.getItem("user") && p === localStorage.getItem("pass")) {
+        let savedUser = localStorage.getItem("user");
+        let savedPass = localStorage.getItem("pass");
+
+        // TEMP LOGIN
+        if (u === TEMP_USER && p === TEMP_PASS) {
+            window.location.href = "dashboard.html";
+            return;
+        }
+
+        // NORMAL LOGIN
+        if (u === savedUser && p === savedPass) {
             window.location.href = "dashboard.html";
         } else {
-            alert("Invalid login.");
+            alert("bro that login ain't valid 💀");
         }
     });
 }
 
-// dropdown menu
+// DROPDOWN
 function toggleMenu() {
-    document.getElementById("dropdown").style.display =
-        document.getElementById("dropdown").style.display === "flex" ? "none" : "flex";
+    let d = document.getElementById("dropdown");
+    d.style.display = d.style.display === "flex" ? "none" : "flex";
 }
 
-// logout
+// LOGOUT
 function logout() {
-    window.location.href = "start.html";
+    window.location.href = "index.html";
 }
